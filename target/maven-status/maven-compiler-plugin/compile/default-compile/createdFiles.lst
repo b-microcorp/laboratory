@@ -1,0 +1,3 @@
+com\bmicrocorp\laboratory\LaboratoryApplication.class
+com\bmicrocorp\laboratory\model\entities\User.class
+com\bmicrocorp\laboratory\rest\UserController.class

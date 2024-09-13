@@ -1,4 +1,4 @@
-package com.bmicrocorp.laboratory.config;
+package com.bmicrocorp.laboratory.config.rest;
 
 import java.io.IOException;
 
@@ -44,8 +44,8 @@ public class RestSecurityConfig {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
           .inMemoryAuthentication()
-          .withUser("user1")
-          .password(passwordEncoder.passwordEncoder().encode("user1Pass"))
+          .withUser("test@test.com")
+          .password(passwordEncoder.passwordEncoder().encode("test"))
           .authorities("ROLE_USER");
     }
 

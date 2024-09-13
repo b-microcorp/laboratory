@@ -1,3 +1,10 @@
-com\bmicrocorp\laboratory\LaboratoryApplication.class
+com\bmicrocorp\laboratory\config\rest\RestSecurityConfig$1.class
 com\bmicrocorp\laboratory\model\entities\User.class
+com\bmicrocorp\laboratory\Utils\JsonUtils.class
+com\bmicrocorp\laboratory\config\bean\PasswordEncoderConfig.class
+com\bmicrocorp\laboratory\config\rest\RestSecurityConfig.class
+com\bmicrocorp\laboratory\LaboratoryApplication.class
 com\bmicrocorp\laboratory\rest\UserController.class
+com\bmicrocorp\laboratory\config\rest\RestAuthenticationEntryPoint.class
+com\bmicrocorp\laboratory\config\rest\RestResponse.class
+com\bmicrocorp\laboratory\rest\LoginController.class

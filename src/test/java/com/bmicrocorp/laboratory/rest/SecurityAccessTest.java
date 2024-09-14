@@ -6,9 +6,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.bmicrocorp.laboratory.Utils.JsonUtils;
 import com.bmicrocorp.laboratory.config.rest.RestResponse;
+import com.bmicrocorp.laboratory.model.entities.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -33,13 +35,23 @@ public class SecurityAccessTest {
 
 	@Test
 	void testAuthorized() throws Exception {
-		final RestResponse expectedFail = new RestResponse(HttpServletResponse.SC_UNAUTHORIZED, null, "Bad credentials");
+		// Not a known user
+		final RestResponse expectedFail = new RestResponse(HttpServletResponse.SC_UNAUTHORIZED, null, "Unknown user testFail@test.com");
 		final String data = this.restTemplate.withBasicAuth("testFail@test.com", "test").getForObject("http://localhost:" + port + "/user/hello",
 			String.class).trim();
 		assertThat(data).isEqualTo(JsonUtils.getJsonMapper().writeValueAsString(expectedFail).trim());
-		final String validData = this.restTemplate.withBasicAuth("test@test.com", "test").getForObject("http://localhost:" + port + "/user/hello",
+
+		// Not a right tuple user/pass 
+		final String invalidData = this.restTemplate.withBasicAuth("1@gmail.com", "test").getForObject("http://localhost:" + port + "/user/hello",
 			String.class).trim();
-		assertThat(validData).isEqualTo("{\"id\":0,\"email\":\"test@email.com\",\"name\":\"Original User\"}");
+		final RestResponse expectedFailBadCred = new RestResponse(HttpServletResponse.SC_UNAUTHORIZED, null, "Bad credentials");
+		assertThat(invalidData).isEqualTo(JsonUtils.getJsonMapper().writeValueAsString(expectedFailBadCred).trim());
+		
+		// Auth ok
+		final String validData = this.restTemplate.withBasicAuth("1@gmail.com", "test1").getForObject("http://localhost:" + port + "/user/hello/2",
+			String.class).trim();
+		assertThat(validData).isNotNull();
+		assertThat(validData.contains("1@gmail.com"));
 	}
 
 }

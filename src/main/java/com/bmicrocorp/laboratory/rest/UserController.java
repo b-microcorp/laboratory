@@ -12,12 +12,12 @@ public class UserController {
 
     @GetMapping("/user/hello")
 	public User hello(@RequestParam(value = "id", defaultValue = "0") long id) {
-		return new User(id, "test@email.com", "Original User");
+		return new User("test@email.com", "Original", "user", "pass", "ADMIN");
 	}
 
     
     @GetMapping("/user/hello/{id}")
 	public User hello(@PathVariable Long id) {
-		return new User(id, id + "test.com", "User " + id);
+		return new User(id + "test.com", "User " + id, "user", "pass", "USER");
 	}
 }

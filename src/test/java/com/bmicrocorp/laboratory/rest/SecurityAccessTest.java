@@ -6,18 +6,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.security.core.userdetails.UserDetails;
 
+import com.LaboratoryTest;
 import com.bmicrocorp.laboratory.Utils.JsonUtils;
 import com.bmicrocorp.laboratory.config.rest.RestResponse;
-import com.bmicrocorp.laboratory.model.entities.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class SecurityAccessTest {
+public class SecurityAccessTest extends LaboratoryTest {
 
 
 	@LocalServerPort
@@ -48,7 +47,7 @@ public class SecurityAccessTest {
 		assertThat(invalidData).isEqualTo(JsonUtils.getJsonMapper().writeValueAsString(expectedFailBadCred).trim());
 		
 		// Auth ok
-		final String validData = this.restTemplate.withBasicAuth("1@gmail.com", "test1").getForObject("http://localhost:" + port + "/user/hello/2",
+		final String validData = this.restTemplate.withBasicAuth(LaboratoryTest.USERNAME, LaboratoryTest.PASSWORD).getForObject("http://localhost:" + port + "/user/hello/2",
 			String.class).trim();
 		assertThat(validData).isNotNull();
 		assertThat(validData.contains("1@gmail.com"));

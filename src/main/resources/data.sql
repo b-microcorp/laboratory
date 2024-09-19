@@ -9,3 +9,9 @@ INSERT INTO userslab (id, email, name, firstname, password, role)
     (3,'3@gmail.com', 'Three', 'Fify', '$2a$10$Mnpb8iFsYGEcAoI9V63yEOhEaEA6Cd8idEXy5L36nm.5Ns7xEuN5O', 'VIEWER'),
     (4,'4@gmail.com', 'Four', 'Dicky', '$2a$10$UT4nczbfwfnsnT.ktfggi.yrKTU1rocUmna2MTAHGIWvZS.O9QuRu', 'USER'),
     (5,'5@gmail.com', 'Five', 'Ly', '$2a$10$RjSF8oa6tYYtq9zQ02jkJ.mcbF6pGOUDP2A/nAnztWpca.nQNe7Ja', 'USER');
+
+-- INSERT Testing items
+INSERT INTO items (id, title, price, desc)
+    VALUES
+    (1, 'Testing item', 1.0, 'A testing item registered by default, with a basic price'),
+    (2, 'A second item', 3.8, 'A new Testing item registered with a custom price');

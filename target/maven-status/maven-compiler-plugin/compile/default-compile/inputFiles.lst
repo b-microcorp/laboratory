@@ -5,8 +5,11 @@ C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicroc
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\config\rest\RestResponse.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\config\rest\RestSecurityConfig.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\LaboratoryApplication.java
+C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\model\entities\Item.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\model\entities\User.java
+C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\repository\ItemRepository.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\repository\UserRepository.java
+C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\rest\ItemController.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\rest\LoginController.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\rest\UserController.java
 C:\Users\KevinBoucheron\Documents\PERSONNEL\laboratory\src\main\java\com\bmicrocorp\laboratory\Utils\JsonUtils.java
